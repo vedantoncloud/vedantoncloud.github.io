@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>My Life Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<link rel="stylesheet" href="style.css" />
+
+
+<!-- Calendar -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+
+
+<div class="app">
+<h1>🔥 My Daily Task Tracker</h1>
+
+
+<div class="task-box">
+<input id="taskInput" placeholder="Enter your task..." />
+<input type="date" id="taskDate" />
+<button onclick="addTask()">Add</button>
+</div>
+
+
+<ul id="taskList"></ul>
+
+
+<h2>📊 Progress</h2>
+<div id="progress"></div>
+
+
+<h2>📅 Mahalakshmi Calendar 2026</h2>
+<div id="calendar"></div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script src="calendar.js"></script>
+
+
+</body>
+</html>
