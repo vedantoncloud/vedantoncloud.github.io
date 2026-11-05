@@ -273,7 +273,7 @@ function initContactForm() {
 
       const btn = form.querySelector('button[type="submit"]');
       const original = btn.innerHTML;
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane text-emerald-400"></i> Launching Gmail...';
+      btn.innerHTML = '<i class="fa-solid fa-envelope text-emerald-400"></i> Launching Gmail...';
       setTimeout(() => {
         btn.innerHTML = original;
         form.reset();
