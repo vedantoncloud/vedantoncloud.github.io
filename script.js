@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initContactForm();
   initThreeDWorkstation();
+  initTechFilters();
 });
 
 // 1. Interactive Constellation Canvas
@@ -579,4 +580,41 @@ function switchHeroTab(tab) {
   }
 }
 window.switchHeroTab = switchHeroTab;
+
+// 9. Tech Stack Category Filtering
+function initTechFilters() {
+  const buttons = document.querySelectorAll('.tech-tab-btn');
+  const items = document.querySelectorAll('.tech-pill-item');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => {
+        b.classList.remove('bg-sky-500/20', 'text-sky-300', 'border-sky-500/40');
+        b.classList.add('text-slate-400', 'border-slate-800');
+      });
+      btn.classList.add('bg-sky-500/20', 'text-sky-300', 'border-sky-500/40');
+      btn.classList.remove('text-slate-400', 'border-slate-800');
+
+      const filter = btn.getAttribute('data-tech-filter');
+
+      items.forEach((item) => {
+        const cat = item.getAttribute('data-tech-cat') || '';
+        if (filter === 'all' || cat.includes(filter)) {
+          item.style.display = 'flex';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, 30);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(8px)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+}
+
 
